@@ -11,23 +11,22 @@ if not window:
     glfw.terminate()
     exit()
 
-glfw.make_context_current(window)[cite: 335, 336]
-
+glfw.make_context_current(window)
 
 while not glfw.window_should_close(window):
-
     glfw.poll_events()
 
     if glfw.get_key(window, glfw.KEY_ESCAPE) == glfw.PRESS:
         glfw.set_window_should_close(window, True)
 
+    # Cores aleatórias
     r, g, b = random.random(), random.random(), random.random()
-    glClearColor(r, g, b, 1.0)[cite: 371]
+    glClearColor(r, g, b, 1.0)
 
     glClear(GL_COLOR_BUFFER_BIT)
-
     glfw.swap_buffers(window)
 
+    # Pausa de 0.5s para as cores trocarem devagar
     time.sleep(0.5)
 
 glfw.terminate()
